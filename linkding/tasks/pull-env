@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+op document get "Linkding ENV" -o .env
