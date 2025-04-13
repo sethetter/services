@@ -8,7 +8,7 @@ app = "sethetter-linkding"
 primary_region = "dfw"
 
 [[vm]]
-  size = "shared-cpu-1x"
+  size = "shared-cpu-2x"
   memory = "1gb"
 
 [env]
@@ -23,7 +23,7 @@ primary_region = "dfw"
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = "suspend"
   auto_start_machines = true
 
 [mounts]
