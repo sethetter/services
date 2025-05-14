@@ -1,0 +1,31 @@
+# fly.toml app configuration file generated for sethetter-gotosocial on 2025-05-13T20:21:33-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'sethetter-gotosocial'
+primary_region = 'dfw'
+
+[build]
+
+[env]
+  LITESTREAM_REPLICA_BUCKET = 'sethetter-gotosocial-on-fly'
+  LITESTREAM_REPLICA_ENDPOINT = 's3.us-west-001.backblazeb2.com'
+  LITESTREAM_REPLICA_PATH = 'gotosocial_replica.sqlite3'
+
+[[mounts]]
+  source = 'gotosocial_data'
+  destination = '/gotosocial/data'
+  auto_extend_size_threshold = 80
+  auto_extend_size_increment = '1GB'
+  auto_extend_size_limit = '30GB'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'suspend'
+  auto_start_machines = true
+
+[[vm]]
+  size = 'shared-cpu-2x'
+  memory = '1gb'

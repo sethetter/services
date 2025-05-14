@@ -1,0 +1,13 @@
+trusted-proxies:
+  - "172.16.7.114/16"
+port: 8080
+host: "stream.seth.computer"
+account-domain: "seth.computer"
+landing-page-user: "seth"
+
+db-type: "sqlite"
+db-address: "/gotosocial/data/db.sqlite3"
+
+storage-backend: "s3"
+storage-s3-endpoint: "s3.us-west-001.backblazeb2.com"
+storage-s3-bucket: "sethetter-gotosocial-on-fly"
